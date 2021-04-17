@@ -7,7 +7,9 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  name: Default
+  demands:
+    unity_2020.3.3f1
 
 steps:
 - script: echo Hello, world!
