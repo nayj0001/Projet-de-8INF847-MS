@@ -12,9 +12,35 @@ pool:
     unity_2020.3.3f1
 
 steps:
+#cleanup for unity build
+- task: DeleteFiles@1
+  inputs:
+    SourceFolder: '$(Build.ArtifactStagingDirectory)'
+    Contents: '**/*'
+
+#get the previously secured library (if any) for performance reasons
+- task: DeleteFiles@1
+  inputs:
+    SourceFolder: '$(Build.Repository.LocalPath)\Unity Source\Manage the Universe\Library'
+    Contents: '**/*'
+- task: CmdLine@2
+  inputs:
+    script: 'if EXIST "$(Build.BinariesDirectory)\Library\" move "$(Build.BinariesDirectory)\Library"$(Build.Repository.LocalPath)\Projet-de-8INF847-MS-in-Unity\Library"'
+
+
+#unity PC build
 - task: UnityBuildTask@3
   inputs:
     buildTarget: 'Win64'
     unityProjectPath: 'Projet-de-8INF847-MS-in-Unity'
     outputPath: '$(Build.BinariesDirectory)'
     outputFileName: 'Projet-de-8INF847-MS-in-Unity'
+
+#secure the library for performance reasons
+- task: DeleteFiles@1
+  inputs:
+    SourceFolder: '$(Build.BinariesDirectory)\Library'
+    Contents: '**/*'
+- task: CmdLine@2
+  inputs:
+    script: 'move "$(Build.Repository.LocalPath)\Projet-de-8INF847-MS-in-Unity\Library" "$(Build.BinariesDirectory)\Library"'
