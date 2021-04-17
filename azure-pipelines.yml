@@ -12,10 +12,10 @@ pool:
     unity_2020.3.3f1
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  - 
+- task: UnityBuildTask@3
+  inputs:
+    buildTarget: 'Win64'
+    unityProjectPath: 'C:\Users\nayin\Documents\GitHub\Projet-de-8INF847-MS\Projet-de-8INF847-MS-in-Unity'
+    outputPath: '$(Build.BinariesDirectory)'
+    outputFileName: 'Projet-de-8INF847-MS-in-Unity'
