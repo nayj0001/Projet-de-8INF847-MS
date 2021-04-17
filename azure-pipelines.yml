@@ -25,8 +25,7 @@ steps:
     Contents: '**/*'
 - task: CmdLine@2
   inputs:
-    script: 'if EXIST "$(Build.BinariesDirectory)\Library\" move "$(Build.BinariesDirectory)\Library"$(Build.Repository.LocalPath)\Projet-de-8INF847-MS-in-Unity\Library"'
-
+    script: 'if EXIST "$(Build.BinariesDirectory)\Library\" move "$(Build.BinariesDirectory)\Library" "$(Build.Repository.LocalPath)\Projet-de-8INF847-MS-in-Unity\Library"'
 
 #unity PC build
 - task: UnityBuildTask@3
