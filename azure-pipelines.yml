@@ -15,6 +15,6 @@ steps:
 - task: UnityBuildTask@3
   inputs:
     buildTarget: 'Win64'
-    unityProjectPath: 'Projet-de-8INF847-MS\Projet-de-8INF847-MS-in-Unity'
+    unityProjectPath: 'Projet-de-8INF847-MS-in-Unity'
     outputPath: '$(Build.BinariesDirectory)'
     outputFileName: 'Projet-de-8INF847-MS-in-Unity'
