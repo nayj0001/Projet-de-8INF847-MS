@@ -15,7 +15,7 @@ steps:
 #cleanup for unity build
 - task: DeleteFiles@1
   inputs:
-    SourceFolder: '$(Build.ArtifactStagingDirectory)\Build'
+    SourceFolder: '$(Build.ArtifactStagingDirectory)'
     Contents: '**/*'
 
 #get the previously secured library (if any) for performance reasons
