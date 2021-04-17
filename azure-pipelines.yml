@@ -32,7 +32,7 @@ steps:
   inputs:
     buildTarget: 'Win64'
     unityProjectPath: 'Projet-de-8INF847-MS-in-Unity'
-    outputPath: '$(Build.BinariesDirectory)'
+    outputPath: '$(Build.BinariesDirectory)\Build'
     outputFileName: 'Projet-de-8INF847-MS-in-Unity'
 
 #secure the library for performance reasons
