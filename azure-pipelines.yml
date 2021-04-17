@@ -35,6 +35,12 @@ steps:
     outputPath: '$(Build.BinariesDirectory)\Build'
     outputFileName: 'Projet-de-8INF847-MS-in-Unity'
 
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.BinariesDirectory)\Build'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+
 #secure the library for performance reasons
 - task: DeleteFiles@1
   inputs:
