@@ -21,7 +21,7 @@ steps:
 #get the previously secured library (if any) for performance reasons
 - task: DeleteFiles@1
   inputs:
-    SourceFolder: '$(Build.Repository.LocalPath)\Unity Source\Manage the Universe\Library'
+    SourceFolder: '$(Build.Repository.LocalPath)\Projet-de-8INF847-MS-in-Unity\Library'
     Contents: '**/*'
 - task: CmdLine@2
   inputs:
